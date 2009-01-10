@@ -1,0 +1,4 @@
+2009-01-10  Valentin Hilbig  <tino@zoo.03.softkill.net>
+
+	* checkrun.c (copy_loop): Added write option to activity file (oops)
+
