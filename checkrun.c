@@ -14,8 +14,8 @@
  * mainly GPLv2.
  *
  * $Log$
- * Revision 1.1  2009-01-10 06:01:11  tino
- * added
+ * Revision 1.2  2009-01-10 06:35:05  tino
+ * Writing to activity file
  *
  */
 
@@ -164,7 +164,7 @@ copy_loop(CFG)
 	  int		out, len;
 
 	  /* Write activity file	*/
-	  if ((out=tino_file_open_createE(cfg->file, O_APPEND, 0666))<0)
+	  if ((out=tino_file_open_createE(cfg->file, O_WRONLY|O_APPEND, 0666))<0)
 	    {
 	      tino_err("cannot create %s", cfg->file);
 	      return;
