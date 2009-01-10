@@ -2,9 +2,7 @@
  *
  * Simple checker program
  *
- * Copyright (C)2009 Valentin Hilbig <webmaster@scylla-charybdis.com>
- *
- * This is release early code.  Use at own risk.
+ * This is release early code.
  *
  * This Works is placed under the terms of the Copyright Less License,
  * see file COPYRIGHT.CLL.  USE AT OWN RISK, ABSOLUTELY NO WARRANTY.
@@ -14,9 +12,11 @@
  * mainly GPLv2.
  *
  * $Log$
+ * Revision 1.3  2009-01-10 07:16:39  tino
+ * Copyright removed (OOPS) as this is CLLed.
+ *
  * Revision 1.2  2009-01-10 06:35:05  tino
  * Writing to activity file
- *
  */
 
 #define TINO_NEED_OLD_ERR_FN
