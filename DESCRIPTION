@@ -1,0 +1,16 @@
+Program watchdog to terminate a program with starving output
+# $Header$
+#
+# $Log$
+# Revision 1.1  2009-01-10 06:01:11  tino
+# added
+#
+
+Checkrun runs a program and checks, if it did some output within a
+given time interval.  If no output can be detected, the child will be
+terminated, first with a HUP, then a TERM and afterwards a KILL.
+
+In a distant future all this functionality here might be implemented
+into my "timeout" tool as well, however I needed this feature before
+timeout had this feature.  If you need to test a pipe for silence, use
+/bin/cat as program, or try the "timeout" tool.
