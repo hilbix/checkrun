@@ -1,1 +1,2 @@
-Copyright removed (as this is CLLed)
+Announcements are now in the git commit log:
+git log --follow VERSION

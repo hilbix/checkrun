@@ -1,0 +1,5 @@
+*.d
+*.o
+*~
+checkrun
+checkrun_version.h
