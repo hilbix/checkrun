@@ -1,3 +1,7 @@
+2016-11-22  Valentin Hilbig  <externer.dl.hilbig@muenchen.de>
+
+	* checkrun.c (copy_loop): -a can be empty now, too
+
 2009-01-10  Valentin Hilbig  <tino@zoo.03.softkill.net>
 
 	* checkrun.c (copy_loop): Added write option to activity file (oops)

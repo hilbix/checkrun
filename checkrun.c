@@ -1,6 +1,4 @@
-/* $Header$
- *
- * Simple checker program
+/* Simple program to check command output for activity
  *
  * This is release early code.
  *
@@ -10,13 +8,6 @@
  * Note that the CLL does only cover the code as it is in this file,
  * but THE CLL DOES NOT COVER THE CODE IN THE LIBRARY, the library is
  * mainly GPLv2.
- *
- * $Log$
- * Revision 1.3  2009-01-10 07:16:39  tino
- * Copyright removed (OOPS) as this is CLLed.
- *
- * Revision 1.2  2009-01-10 06:35:05  tino
- * Writing to activity file
  */
 
 #define TINO_NEED_OLD_ERR_FN
@@ -39,6 +30,8 @@ struct cfg
     unsigned long	seconds;
     int			mark;
     unsigned long	reads, count;
+
+    size_t		alen;
   };
 
 #define	CFG	struct cfg *cfg
@@ -175,7 +168,9 @@ copy_loop(CFG)
 	  if (cfg->activity)
 	    {
 	      tmp	= cfg->activity;
-	      len	= strlen(cfg->activity);
+	      if (!cfg->alen && *tmp)
+		cfg->alen = strlen(tmp);
+	      len	= cfg->alen;
 	    }
 	  if (tino_file_write_allE(out, tmp, len)!=len)
 	    {
@@ -228,7 +223,7 @@ alarm_callback(void *user, long delta, time_t now, long run)
 int
 main(int argc, char **argv)
 {
-  static struct cfg	cfg;
+  static struct cfg	cfg = { 0 };
   int			argn;
 
   argn	= tino_getopt(argc, argv, 1, 0,
@@ -245,11 +240,12 @@ main(int argc, char **argv)
 		      ,
 
 		      TINO_GETOPT_STRING
-		      "a str	Activity string appended to -f (defaults to seen activity)"
+		      "a str	Activity string appended to -f instead of seen activity\n"
+		      "		(has no effect if -f is not present)"
 		      , &cfg.activity,
 
 		      TINO_GETOPT_FLAG
-		      "d	Discard output (=stdout) of program"
+		      "d	Discard output of activity (=stdout of program)"
 		      , &cfg.discard,
 
 		      TINO_GETOPT_STRING
