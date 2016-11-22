@@ -18,9 +18,9 @@ Returns:
 - 37 if it was unable to kill the program.
 - return code of the forked program (possibly killed).
 
-About: see [[DESCRIPTION]]
+About: see [DESCRIPTION](DESCRIPTION)
 
-Source: [[https://github.com/hilbix/checkrun]]
+Source: https://github.com/hilbix/checkrun
 
 Something like following example script runs on one of my linux based
 routers, because the (internal) network card sometimes stalls due to
@@ -34,6 +34,4 @@ do
 	ifconfig eth0 up
 done
 ```
-
--Tino <webmaster@scylla-charybdis.com>
 
