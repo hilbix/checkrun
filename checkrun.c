@@ -153,7 +153,7 @@ copy_loop(CFG)
 
       if (cfg->file)
 	{
-	  const void	*tmp;
+	  const char	*tmp;
 	  int		out, len;
 
 	  /* Write activity file	*/
