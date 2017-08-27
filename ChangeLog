@@ -1,3 +1,5 @@
+Retired, see "git log"
+
 2016-11-22  Valentin Hilbig  <externer.dl.hilbig@muenchen.de>
 
 	* checkrun.c (copy_loop): -a can be empty now, too
